@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="triviaTemplate.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:triviaTemplate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--Set App background color here-->
+    <Grid Background="WhiteSmoke">
+        <!--The following defines the number of rows and cols GridView contains-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--Trivia title goes here-->
+        <TextBlock Foreground="BlueViolet" Grid.Row="0" Grid.Column="0" Text="Trivia Time" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" FontSize="110" FontFamily="Segoe UI Light" />
+        <!--This tells the user what's going on-->
+        <TextBlock Name="questionStatusBlock" Foreground="Black" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="select the answer below" 
+                   FontSize="32" Margin="20"/>
+        <!--This is where the question is displayed-->
+        <TextBlock Name="questionBlock" TextWrapping="Wrap" Foreground="Black" Grid.Row="2" FontFamily="Segoe UI Light" Text="Question" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 20"
+                   FontSize="75" Grid.RowSpan="3"/>
+        <!--This is where the possible answers are displayed-->
+        <TextBlock Name="q1Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="1" Grid.Column="1" Text="q1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Name="q2Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="2" Grid.Column="1" Text="q2" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Name="q3Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="3" Grid.Column="1" Text="q3" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Name="q4Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="4" Grid.Column="1" Text="q4" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!--This creates the radio buttons which call the callbacks in the C# file-->
+        <RadioButton Name="q1Button" Foreground="Black" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Checked="onQ1"/>
+        <RadioButton Name="q2Button" Foreground="Black" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Checked="onQ2"/>
+        <RadioButton Name="q3Button" Foreground="Black" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Checked="onQ3"/>
+        <RadioButton Name="q4Button" Foreground="Black" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Checked="onQ4"/>
+        <!--Textblook which shows total number of questions -->
+        <TextBlock Name="totalNumOfQ" Foreground="Black" Grid.Row="5" Grid.Column="0" Text="Total Questions: " FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="10 10" />
+        <!--Current question number-->
+        <TextBlock Name="currentQuesNumBlock" Foreground="Black" Grid.Row="5" Grid.Column="1" Text="Current Question #" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+    </Grid>
+</Page>

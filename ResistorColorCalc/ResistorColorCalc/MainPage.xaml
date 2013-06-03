@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="ResistorColorCalc.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ResistorColorCalc"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Left" Height="44" Margin="10,10,0,0" TextWrapping="Wrap" Text="Resistor Color Calculator" FontSize="22" VerticalAlignment="Top" Width="480"/>
+        <TextBox Name="userInput" FontSize="22" TextAlignment="Center"  HorizontalAlignment="Left" Height="38" Margin="424,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TextChanged="onUserInput" InputScope="Number" AcceptsReturn="True"/>
+        <TextBlock Name="debugBlock" HorizontalAlignment="Left" Height="52" Margin="424,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184"/>
+        <TextBlock HorizontalAlignment="Left" Height="38" Margin="257,154,0,0" TextWrapping="Wrap" Text="Enter Resistance: " FontSize="22" VerticalAlignment="Top" Width="162"/>
+        <TextBlock FontSize="22" HorizontalAlignment="Left" Height="38" Margin="598,154,0,0" TextWrapping="Wrap" Text="Ohms" VerticalAlignment="Top" Width="69"/>
+        <Rectangle Name="firstBox" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="240" Margin="344,338,0,0" Stroke="Black" VerticalAlignment="Top" Width="146"/>
+        <Rectangle Name="secondBox" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="240" Margin="546,338,0,0" Stroke="Black" VerticalAlignment="Top" Width="146"/>
+        <Rectangle Name="thirdBox" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="240" Margin="752,338,0,0" Stroke="Black" VerticalAlignment="Top" Width="146"/>
+        <Rectangle Name="toleranceBox" HorizontalAlignment="Left" Height="240" Margin="976,338,0,0" Stroke="Black" VerticalAlignment="Top" Width="146" Fill="#FFF9C616"/>
+        <ToggleSwitch Header="Select Tolerance Value" HorizontalAlignment="Left" Height="58" Margin="976,134,0,0" VerticalAlignment="Top" Width="122" OffContent="5%" OnContent="10%" Toggled="togglePress"/>
+        <TextBlock Name="toleranceColorLabel" TextAlignment="Center" HorizontalAlignment="Left" Height="45" Margin="976,583,0,0" TextWrapping="Wrap" Text="Gold" VerticalAlignment="Top" Width="146"/>
+        <TextBlock Name="thirdColorLabel" HorizontalAlignment="Left" TextAlignment="Center" Height="45" Margin="752,583,0,0" TextWrapping="Wrap" Text="Enter Resistance Above" VerticalAlignment="Top" Width="146"/>
+        <TextBlock Name="secondColorLabel" HorizontalAlignment="Left" TextAlignment="Center" Height="45" Margin="546,583,0,0" TextWrapping="Wrap" Text="Enter Resistance Above" VerticalAlignment="Top" Width="146" RenderTransformOrigin="-0.493,0.6"/>
+        <TextBlock Name="firstColorLabel" HorizontalAlignment="Left" TextAlignment="Center" Height="45" Margin="344,583,0,0" TextWrapping="Wrap" Text="Enter Resistance Above" VerticalAlignment="Top" Width="146" RenderTransformOrigin="-0.493,0.6"/>
+        <TextBlock HorizontalAlignment="Left" Height="51" Margin="1143,664,0,0" TextWrapping="Wrap" Text="Note: Only the first two sig. fig. are used for resistor color band calculations. " VerticalAlignment="Top" Width="164"/>
+
+    </Grid>
+</Page>

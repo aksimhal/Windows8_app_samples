@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="OhmsLaw.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OhmsLaw"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <TextBlock Name="debugBlock" HorizontalAlignment="Left" Height="55" Margin="531,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <RadioButton Name="selectVoltage" Content=" Voltage" Foreground="LawnGreen" HorizontalAlignment="Left" Height="58" Margin="193,210,0,0" VerticalAlignment="Top" Width="143" Checked="onVoltage"/>
+        <RadioButton Name="selectCurrent" Content=" Current" Foreground="LawnGreen" HorizontalAlignment="Left" Height="58" Margin="193,356,0,0" VerticalAlignment="Top" Width="143" Checked="onCurrent"/>
+        <RadioButton Name="selectResistance" Foreground="LawnGreen" Content=" Resistance" HorizontalAlignment="Left" Height="58" Margin="193,502,0,0" VerticalAlignment="Top" Width="143" Checked="onResistance"/>
+        <TextBlock Foreground="LawnGreen" FontSize="20" TextAlignment="Center" HorizontalAlignment="Left" Height="55" Margin="1132.716,610.791,0,0" TextWrapping="Wrap" Text="Resistance is FUTILE!" VerticalAlignment="Top" Width="145" RenderTransformOrigin="-0.204,3.567" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <TextBlock.RenderTransform>
+                <CompositeTransform SkewX="35.26" TranslateX="99.817"/>
+            </TextBlock.RenderTransform>
+        </TextBlock> 
+        <TextBlock Foreground="LawnGreen" FontSize="20" TextAlignment="Center" HorizontalAlignment="Left" Height="86" Margin="163,80,0,0" TextWrapping="Wrap" Text="Select Variable to Calculate" VerticalAlignment="Top" Width="110" FontStyle="Italic"/>
+        <TextBox Name="vBlock" HorizontalAlignment="Left" FontSize="28" Height="58" Margin="317,216,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="115"/>
+        <TextBox Name="iBlock" HorizontalAlignment="Left" FontSize="28" Height="58" Margin="317,342,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="115"/>
+        <TextBox Name="rBlock" HorizontalAlignment="Left" Height="58" FontSize="28" Margin="317,483,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="115"/>
+        <TextBlock Foreground="LawnGreen" FontSize="20" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" TextWrapping="Wrap" Text="Ohm's Law Calculator" VerticalAlignment="Top" Width="452"/>
+        <TextBlock Foreground="LawnGreen" FontSize="28" HorizontalAlignment="Left" Height="31" Margin="456,228,0,0" TextWrapping="Wrap" Text="Volts" VerticalAlignment="Top" Width="102"/>
+        <TextBlock Foreground="LawnGreen" FontSize="28" HorizontalAlignment="Left" Height="31" Margin="456,357,0,0" TextWrapping="Wrap" Text="Amp" VerticalAlignment="Top" Width="102"/>
+        <TextBlock Foreground="LawnGreen" FontSize="28" HorizontalAlignment="Left" Height="31" Margin="456,498,0,0" TextWrapping="Wrap" Text="Ohms" VerticalAlignment="Top" Width="102"/>
+        <TextBlock HorizontalAlignment="Left" Height="326" Foreground="LawnGreen" FontSize="200" Margin="753,166,0,0" TextWrapping="Wrap" Text="V = IR" VerticalAlignment="Top" Width="613"/>
+
+    </Grid>
+</Page>
