@@ -31,6 +31,8 @@ namespace triviaTemplate
         public string[] answer;
         /*Contains the current position in the question array */ 
         public int currentState = 0;
+        public int numCorrect = 0;
+        public int numWrong = 0; 
         /* Contains the correct answer to increment the current state */ 
         public string theAnswer; 
         public MainPage()
@@ -72,8 +74,9 @@ namespace triviaTemplate
                 theAnswer = answer[currentState];
                 theAnswer = theAnswer.Trim();
                 //debug.Text = theAnswer;
-                currentQuesNumBlock.Text = "Current Question #: " + (currentState + 1).ToString();
-            
+                //currentQuesNumBlock.Text = "Current Question #: " + (currentState + 1).ToString();
+                numRight.Text = "Correct: " + numCorrect.ToString();
+                numIncorrect.Text = "Wrong: " + numWrong.ToString(); 
 
         }
 
@@ -217,6 +220,78 @@ namespace triviaTemplate
             {
                 questionStatusBlock.Text = "Whoops, try again!";
             }
+        }
+
+        private void onOptionA(object sender, RoutedEventArgs e)
+        {
+            if (theAnswer.Equals("1"))
+            {
+                questionStatusBlock.Text = "Good Job!";
+                numCorrect++; 
+                
+            }
+            else
+            {
+                questionStatusBlock.Text = "Whoops, correct ans: " + theAnswer;
+                numWrong++; 
+            }
+
+            currentState++;
+            setUpQuestion();
+        }
+
+        private void onOptionB(object sender, RoutedEventArgs e)
+        {
+            if (theAnswer.Equals("2"))
+            {
+                questionStatusBlock.Text = "Good Job!";
+                numCorrect++;
+
+            }
+            else
+            {
+                questionStatusBlock.Text = "Whoops, correct ans: " + theAnswer;
+                numWrong++;
+            }
+
+            currentState++;
+            setUpQuestion();
+        }
+
+        private void onOptionC(object sender, RoutedEventArgs e)
+        {
+            if (theAnswer.Equals("3"))
+            {
+                questionStatusBlock.Text = "Good Job!";
+                numCorrect++;
+
+            }
+            else
+            {
+                questionStatusBlock.Text = "Whoops, correct ans: " + theAnswer;
+                numWrong++;
+            }
+
+            currentState++;
+            setUpQuestion();
+        }
+
+        private void onOptionD(object sender, RoutedEventArgs e)
+        {
+            if (theAnswer.Equals("4"))
+            {
+                questionStatusBlock.Text = "Good Job!";
+                numCorrect++;
+
+            }
+            else
+            {
+                questionStatusBlock.Text = "Whoops, correct ans: " + theAnswer;
+                numWrong++;
+            }
+
+            currentState++;
+            setUpQuestion();
         }
     }
 }

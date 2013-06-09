@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <!--Set App background color here-->
-    <Grid Background="WhiteSmoke">
+    <Grid Background="White">
         <!--The following defines the number of rows and cols GridView contains-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -23,29 +23,34 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <!--Trivia title goes here-->
-        <TextBlock Foreground="BlueViolet" Grid.Row="0" Grid.Column="0" Text="Trivia Time" HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" FontSize="110" FontFamily="Segoe UI Light" />
+        <Rectangle HorizontalAlignment="Left" Height="768" Grid.RowSpan="6" VerticalAlignment="Top" Width="191" Fill="#FFE2E2E2"/>
+        <TextBlock Foreground="Black" Grid.Row="1" Grid.Column="0" Text="Trivia Time" HorizontalAlignment="Center" 
+    		VerticalAlignment="Center" FontSize="26" FontFamily="Segoe UI Light" Margin="40,51,492,49" Height="28" Width="151" />
         <!--This tells the user what's going on-->
-        <TextBlock Name="questionStatusBlock" Foreground="Black" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="select the answer below" 
-                   FontSize="32" Margin="20"/>
+        <TextBlock x:Name="questionStatusBlock" Foreground="Black" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="select the answer above" 
+    		FontSize="32" Margin="316,0,30,45"/>
         <!--This is where the question is displayed-->
-        <TextBlock Name="questionBlock" TextWrapping="Wrap" Foreground="Black" Grid.Row="2" FontFamily="Segoe UI Light" Text="Question" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 20"
-                   FontSize="75" Grid.RowSpan="3"/>
+        <TextBlock x:Name="questionBlock" TextWrapping="Wrap" Foreground="Black" FontFamily="Segoe UI Light" Text="Question" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="225,28,30,0"
+    		FontSize="75" Height="456" Grid.RowSpan="4" Width="428"/>
+
         <!--This is where the possible answers are displayed-->
-        <TextBlock Name="q1Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="1" Grid.Column="1" Text="q1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Name="q2Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="2" Grid.Column="1" Text="q2" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Name="q3Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="3" Grid.Column="1" Text="q3" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Name="q4Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="4" Grid.Column="1" Text="q4" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="q1Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="1" Grid.Column="1" Text="q1" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="q2Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="2" Grid.Column="1" Text="q2" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="q3Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="3" Grid.Column="1" Text="q3" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="q4Block" TextWrapping="Wrap" Foreground="Black" Grid.Row="4" Grid.Column="1" Text="q4" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <!--This creates the radio buttons which call the callbacks in the C# file-->
-        <RadioButton Name="q1Button" Foreground="Black" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Checked="onQ1"/>
-        <RadioButton Name="q2Button" Foreground="Black" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Checked="onQ2"/>
-        <RadioButton Name="q3Button" Foreground="Black" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Checked="onQ3"/>
-        <RadioButton Name="q4Button" Foreground="Black" Content="" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Checked="onQ4"/>
-        <!--Textblook which shows total number of questions -->
-        <TextBlock Name="totalNumOfQ" Foreground="Black" Grid.Row="5" Grid.Column="0" Text="Total Questions: " FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center"
-                   Margin="10 10" />
-        <!--Current question number-->
-        <TextBlock Name="currentQuesNumBlock" Foreground="Black" Grid.Row="5" Grid.Column="1" Text="Current Question #" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+       
         
+        <!--Current question number-->
+        <TextBlock x:Name="totalNumOfQ" Foreground="Black" Grid.Column="1" Text="Total: " FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="370,37,59,55"/>
+        <Image HorizontalAlignment="Left" Height="134" Source="Assets/puzzlePiece.png" Margin="40,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180"/>
+        <Button Content="Select A" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="10,45,0,0" Grid.Row="1" VerticalAlignment="Top" Width="141" Background="#FF171616" Click="onOptionA"/>
+        <Button Content="Select B" Grid.Column="1" HorizontalAlignment="Left" Height="68" Margin="10,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="141" Background="#FF171616" Click="onOptionB"/>
+        <Button Content="Select C" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="10,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="141" Background="#FF171616" Click="onOptionC"/>
+        <Button Content="Select D" Grid.Column="1" HorizontalAlignment="Left" Height="67" Margin="10,27,0,0" Grid.Row="4" VerticalAlignment="Top" Width="141" Background="#FF171616" Click="onOptionD"/>
+        <TextBlock Name="numRight" FontSize="24" HorizontalAlignment="Left" Height="67" Margin="10,33,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Correct" VerticalAlignment="Top" Width="181"/>
+        <TextBlock Name="numIncorrect" FontSize="24" HorizontalAlignment="Left" Height="84" Margin="10,10,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Wrong" VerticalAlignment="Top" Width="240"/>
+
+
     </Grid>
 </Page>
